@@ -5,5 +5,12 @@ public class User {
     private String uName;
     private int uAge;
 
+    public User(int uId, String uName, int uAge) {
+        this.uId = uId;
+        this.uName = uName;
+        this.uAge = uAge;
+    }
 
+    public User() {
+    }
 }
