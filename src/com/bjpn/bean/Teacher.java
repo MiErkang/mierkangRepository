@@ -1,5 +1,7 @@
 package com.bjpn.bean;
 
+import java.util.Objects;
+
 public class Teacher {
     private Integer sAge;
     private Integer sId;
@@ -27,5 +29,31 @@ public class Teacher {
 
     public void setsName(String sName) {
         this.sName = sName;
+    }
+
+    //构造函数
+
+    public Teacher(Integer sAge, Integer sId, String sName) {
+        this.sAge = sAge;
+        this.sId = sId;
+        this.sName = sName;
+    }
+
+    public Teacher() {
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Teacher teacher = (Teacher) o;
+        return Objects.equals(sAge, teacher.sAge) &&
+                Objects.equals(sId, teacher.sId) &&
+                Objects.equals(sName, teacher.sName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(sAge, sId, sName);
     }
 }
